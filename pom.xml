@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.es4j.eventstore</groupId>
-    <artifactId>es4j-eventstore-persistence-acceptance</artifactId>
+    <artifactId>es4j-persistence-acceptance</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>es4j-eventstore-persistence-acceptance</name>
+    <name>es4j-persistence-acceptance</name>
     <url>http://maven.apache.org</url>
 
     <properties>
