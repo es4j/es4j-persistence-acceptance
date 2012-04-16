@@ -1,0 +1,6 @@
+target/
+.idea/
+acceptancedb/
+*.mdb
+*.sdb
+
