@@ -1,6 +1,7 @@
 target/
-.idea/
 *.mdb
 *.sdf
-*.iml
 
+# Intellij IDEA Files #
+.idea/
+*.iml
