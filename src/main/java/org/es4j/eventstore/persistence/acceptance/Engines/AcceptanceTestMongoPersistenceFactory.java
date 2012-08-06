@@ -1,7 +1,9 @@
 package org.es4j.eventstore.persistence.acceptance.Engines;
 
-
 //using MongoPersistence;
+
+import org.es4j.serialization.DocumentObjectSerializer;
+
 //using Serialization;
 
 public class AcceptanceTestMongoPersistenceFactory extends MongoPersistenceFactory {

@@ -1,79 +1,99 @@
 package org.es4j.eventstore.persistence.acceptance;
 
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import org.es4j.eventstore.api.persistence.IPersistenceFactory;
+import org.es4j.eventstore.persistence.acceptance.dotnet.Directory;
+import org.es4j.eventstore.persistence.acceptance.dotnet.AppDomain;
+import org.es4j.eventstore.persistence.acceptance.dotnet.Assembly;
+import org.es4j.eventstore.persistence.acceptance.dotnet.FileLoadException;
+
 //using System.IO;
 //using System.Reflection;
 
 public class PersistenceFactoryScanner {
 
-    private static final IDictionary<string, IPersistenceFactory> Factories =
-			new Dictionary<string, IPersistenceFactory>();
+    private static final Map<String, IPersistenceFactory> Factories =
+            new HashMap<String, IPersistenceFactory>();
 
     public PersistenceFactoryScanner() {
 
-			if (Factories.Count > 0)
-				return;
+        if (!Factories.isEmpty()) {
+            return;
+        }
 
-			foreach (var type in GetAssemblyFiles().SelectMany(GetTypes))
-				AddFactory(type);
+        if(true) throw new UnsupportedOperationException("Not yet implemented");
+        //foreach (Type type in GetAssemblyFiles().SelectMany(GetTypes)) {
+        //    this.addFactory(type);
+        //}
     }
 
-    private static IEnumerable<String> getAssemblyFiles() {
-        return Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll");
+    private static Iterable<String> getAssemblyFiles() {
+        throw new UnsupportedOperationException("Not yet implemented");
+        //return Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll");
     }
 
-    private static Iterable<Type> getTypes(String filename) {
+    private static Iterable<Class<?>> getTypes(String filename) {
+        throw new UnsupportedOperationException("Not yet implemented");
+        /*
         try {
-				return Assembly.LoadFrom(filename).GetTypes();
-			}
-			catch (FileLoadException)
-			{
-				return new Type[] { };
-			}
-			catch (Exception)
-			{
-				return new Type[] { };
-			}
+            return Assembly.loadFrom(filename).getTypes();
+        } 
+        catch (FileLoadException ex) {
+            return new LinkedList<Type>{};
+        } 
+        catch (Exception ex) {
+            return new Type[]{};
+        }
+        */
     }
 
-    private static void addFactory(Type type)
-		{
-			if (!typeof(IPersistenceFactory).IsAssignableFrom(type))
-				return;
+    private static void addFactory(Type type) {
+        throw new UnsupportedOperationException("Not yet implemented");
+        /*
+        if (!IPersistenceFactory.class.isAssignableFrom(type))
+            return;
 
-			if (typeof(IPersistenceFactory) == type || type.IsAbstract)
-				return;
+        if (IPersistenceFactory.class == type || type.isAbstract())
+            return;
 
-			try
-			{
-				var factory = (IPersistenceFactory)Activator.CreateInstance(type);
-				var key = factory.GetType().Name
-					.Replace("AcceptanceTest", string.Empty)
-					.Replace("Factory", string.Empty);
+        try
+        {
+            IPersistenceFactory factory = (IPersistenceFactory)Activator.CreateInstance(type);
+            String key = factory.GetType().Name
+                        .Replace("AcceptanceTest", string.Empty)
+                        .Replace("Factory", string.Empty);
 
-				Factories[key] = factory;
-			}
-			catch
-			{
-				return; // no-op (added to suppress a warning)
-			}
+            Factories[key] = factory;
+        }
+        catch
+        {
+            return; // no-op (added to suppress a warning)
+        }
+        */
     }
 
     //virtual
     public IPersistenceFactory getFactory() {
+        throw new UnsupportedOperationException("Not yet implemented");
+        /*
         var persistenceEngine = "persistence".getSetting() ?? "MsSqlPersistence";
 
         try{
-				return Factories[persistenceEngine];
-			}
-			catch (KeyNotFoundException)
-			{
+            return Factories[persistenceEngine];
+        }
+        catch (KeyNotFoundException) {
 				var message = "The key '{0}' was not a configured persistence engine.".FormatWith(persistenceEngine);
 				throw new StorageException(message);
 			}
+    */
     }
 
     // virtual
-    public int pageSize {
-        get { return int.Parse("pageSize".getSetting() ?? "0"); }
+    public int getPageSize() {
+        throw new UnsupportedOperationException("Not yet implemented");
+        //return int.Parse("pageSize".getSetting() ?? "0");
     }
 }

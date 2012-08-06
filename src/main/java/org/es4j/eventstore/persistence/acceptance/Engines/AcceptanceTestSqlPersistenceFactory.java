@@ -1,5 +1,12 @@
 package org.es4j.eventstore.persistence.acceptance.Engines;
 
+
+import org.es4j.dotnet.data.TransactionScopeOption;
+import org.es4j.eventstore.persistence.acceptance.dotnet.SqlPersistenceFactory;
+import org.es4j.persistence.sql.IConnectionFactory;
+import org.es4j.serialization.BinarySerializer;
+import org.es4j.serialization.api.ISerialize;
+
 //using System.Configuration;
 //using System.Transactions;
 //using Serialization;
@@ -7,7 +14,7 @@ package org.es4j.eventstore.persistence.acceptance.Engines;
 
 public abstract class AcceptanceTestSqlPersistenceFactory extends SqlPersistenceFactory {
 
-    protected AcceptanceTestSqlPersistenceFactory(string connectionName) {
+    protected AcceptanceTestSqlPersistenceFactory(String connectionName) {
         this(new TransformConfigConnectionFactory(connectionName), new BinarySerializer());
     }
 

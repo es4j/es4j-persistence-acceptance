@@ -4,9 +4,10 @@ package org.es4j.eventstore.persistence.acceptance;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class SomeDomainEvent implements Serializable {
 
-    public String someProperty; // { get; set; }
+    private String someProperty; // { get; set; }
 
     public SomeDomainEvent(String someProperty) {
         this.someProperty = someProperty;
