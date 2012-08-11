@@ -2,13 +2,8 @@ package org.es4j.eventstore.persistence.acceptance;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 import org.es4j.eventstore.api.persistence.IPersistenceFactory;
-import org.es4j.eventstore.persistence.acceptance.dotnet.Directory;
-import org.es4j.eventstore.persistence.acceptance.dotnet.AppDomain;
-import org.es4j.eventstore.persistence.acceptance.dotnet.Assembly;
-import org.es4j.eventstore.persistence.acceptance.dotnet.FileLoadException;
 
 //using System.IO;
 //using System.Reflection;
