@@ -1,11 +1,10 @@
 package org.es4j.eventstore.persistence.acceptance.Engines;
 
-
 //using System.Transactions;
 //using RavenPersistence;
 //using Serialization;
 
-public class AcceptanceTestRavenPersistenceFactory extends RavenPersistenceFactory {
+public class AcceptanceTestRavenPersistenceFactory {/* extends RavenPersistenceFactory {
 
     private static final RavenConfiguration config = new RavenConfiguration {
 			Serializer = new DocumentObjectSerializer(),
@@ -19,4 +18,5 @@ public class AcceptanceTestRavenPersistenceFactory extends RavenPersistenceFacto
     public AcceptanceTestRavenPersistenceFactory() {
         super(cnfig);
     }
+    */
 }

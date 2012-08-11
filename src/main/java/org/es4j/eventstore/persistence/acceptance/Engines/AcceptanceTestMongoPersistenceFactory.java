@@ -1,9 +1,9 @@
 package org.es4j.eventstore.persistence.acceptance.Engines;
 
-//using MongoPersistence;
-
+import org.es4j.persistence.mongo.MongoPersistenceFactory;
 import org.es4j.serialization.DocumentObjectSerializer;
 
+//using MongoPersistence;
 //using Serialization;
 
 public class AcceptanceTestMongoPersistenceFactory extends MongoPersistenceFactory {
@@ -14,12 +14,14 @@ public class AcceptanceTestMongoPersistenceFactory extends MongoPersistenceFacto
 
     @Override
     protected String transformConnectionString(String connectionString) {
-
+        throw new UnsupportedOperationException("Not yet implemented");
+        /*
         return connectionString
-				.Replace("[HOST]", "host".GetSetting() ?? "localhost")
-				.Replace("[PORT]", "port".GetSetting() ?? string.Empty)
-				.Replace("[DATABASE]", "database".GetSetting() ?? "EventStore")
-				.Replace("[USER]", "user".GetSetting() ?? string.Empty)
-				.Replace("[PASSWORD]", "password".GetSetting() ?? string.Empty);
+            .replace("[HOST]", "host".GetSetting() ?? "localhost")
+            .replace("[PORT]", "port".GetSetting() ?? string.Empty)
+            .replace("[DATABASE]", "database".GetSetting() ?? "EventStore")
+            .replace("[USER]", "user".GetSetting() ?? string.Empty)
+            .replace("[PASSWORD]", "password".GetSetting() ?? string.Empty);
+       */
     }
 }

@@ -1,5 +1,6 @@
 package org.es4j.eventstore.persistence.acceptance;
 
+import org.es4j.exceptions.ObjectDisposedException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

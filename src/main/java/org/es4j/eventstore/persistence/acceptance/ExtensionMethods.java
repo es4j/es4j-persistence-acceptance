@@ -36,7 +36,7 @@ public class ExtensionMethods {
     }
 
     public static Commit buildAttempt(/*this*/ UUID streamId) {
-        return streamId.buildAttempt(SystemTime.utcNow());
+        return ExtensionMethods.buildAttempt(streamId, SystemTime.utcNow());
     }
 
     public static Commit buildNextAttempt(/*this*/ Commit commit) {

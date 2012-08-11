@@ -3,25 +3,26 @@ package org.es4j.eventstore.persistence.acceptance;
 import java.util.UUID;
 import org.es4j.eventstore.api.persistence.IPersistStreams;
 import org.es4j.eventstore.api.persistence.IPersistenceFactory;
+import org.es4j.eventstore.core.diagnostics.PerformanceCounterPersistenceEngine;
 
 
 public abstract class Using_the_persistence_engine {
 
     protected static final PersistenceFactoryScanner factoryScanner = new PersistenceFactoryScanner();
-    protected static final IPersistenceFactory       factory        = FactoryScanner.GetFactory();
+    protected static final IPersistenceFactory       factory        = factoryScanner.getFactory();
 
     protected static UUID            streamId = UUID.randomUUID();
     protected static IPersistStreams persistence;
 
     protected void establishContext() {
-        persistence = new PerformanceCounterPersistenceEngine(Factory.build(), "tests");
+        persistence = new PerformanceCounterPersistenceEngine(factory.build(), "tests");
         persistence.initialize();
     }
 
     protected void cleanupEverything() {
         persistence.dispose();
         persistence = null;
-        streamId = Guid.newGuid();
+        streamId = UUID.randomUUID();
     }
 }
 
